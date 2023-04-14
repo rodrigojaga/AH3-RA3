@@ -18,5 +18,4 @@ public interface evaltiDAO {
     
     public LinkedList<evalti> gerente();
     
-    //public LinkedList<evalti> usuex();
 }

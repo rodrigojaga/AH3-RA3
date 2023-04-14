@@ -298,10 +298,6 @@ public class addUser extends javax.swing.JFrame {
                 rbactivo.setForeground(Color.red);
                 rbinactivo.setForeground(Color.red);
             }
-//            if(tfact.getText().equals("")){
-//                tfact.setBackground(ca);
-//                
-//            }
             if(tfContra.getText().equals("")){
                 tfContra.setBackground(ca);
                 
@@ -315,7 +311,6 @@ public class addUser extends javax.swing.JFrame {
         }   
         
         
-        //us.mantener();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tfContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfContraActionPerformed
@@ -343,7 +338,6 @@ public class addUser extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         usuarios us = new usuarios();
         us.setVisible(true);
-        //        us.mantener();
         us.label(a);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -423,7 +417,7 @@ public class addUser extends javax.swing.JFrame {
         
        
         
-        //System.out.println(Boolean.parseBoolean(tfact.getText()));
+       
     }
     
     /**

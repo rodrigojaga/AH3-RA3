@@ -24,8 +24,6 @@ public class usuarios extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setIconImage(getIconImage());
-        //login lp = new login();
-        //String a = lp.ae;
         
         datos();
         
@@ -149,7 +147,6 @@ public class usuarios extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         addUser au = new addUser();
         au.setVisible(true);
-        //mantener();
         dispose();
         au.labelAdd(nomusu.getText());
         
@@ -163,14 +160,10 @@ public class usuarios extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         enviar_datos();
-        //mantener();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         enviareliminar_datos();
-        
-        
-        //mantener();
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -207,7 +200,6 @@ public class usuarios extends javax.swing.JFrame {
         int id = (int) tablaUsuarios.getValueAt(tablaUsuarios.getSelectedRow(), 0);
         delete dl = new delete();
         dl.mostrar(id);
-        //dl.eliminar(id);
         dl.setVisible(true);
         
         dl.labeldelete(nomusu.getText());
@@ -220,7 +212,6 @@ public class usuarios extends javax.swing.JFrame {
         sd.eliminar(id);
         dispose();
         delete dl = new delete();
-        //dl.labelDelete(nomusu.getText());
         dl.setVisible(true);
         dispose();
     }
@@ -228,10 +219,7 @@ public class usuarios extends javax.swing.JFrame {
     public void label(String nombre){
         nomusu.setText(nombre);
     }
-    
-//    public void mantener(String txt){
-//        nomusu.setText(txt);
-//    }
+
     /**
      * @param args the command line arguments
      */

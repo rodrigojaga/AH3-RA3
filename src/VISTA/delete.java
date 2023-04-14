@@ -286,8 +286,7 @@ public class delete extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-   
-//           
+              
             int respuesta = JOptionPane.showConfirmDialog(this, "ESTA SEGURO DE QUE QUIERE ELIMINAR LOS DATOS", 
                 "CONFIRMAR", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(respuesta==JOptionPane.YES_OPTION){
@@ -299,11 +298,6 @@ public class delete extends javax.swing.JFrame {
             }
     
 
-
-        //label(nombreD);
-        //labelDelete(nombreD);
-        //System.out.println(nombreD);
-        //us.mantener();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void conMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conMouseClicked

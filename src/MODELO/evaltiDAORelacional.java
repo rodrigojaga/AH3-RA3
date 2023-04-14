@@ -28,7 +28,6 @@ public class evaltiDAORelacional implements evaltiDAO {
             }
             return listar;
         } catch (Exception e) {
-            //System.out.println(e);
         }
         return null;
     }
@@ -38,7 +37,6 @@ public class evaltiDAORelacional implements evaltiDAO {
         String sql = "select * from usuarios where id_usuario= ?";
 
         try {
-            //Inicializa la base de datos
             con = acceso.Conectar();
             ps = con.prepareStatement(sql);
             ps.setInt(1, codigo);
@@ -114,7 +112,7 @@ public class evaltiDAORelacional implements evaltiDAO {
 
    @Override
     public LinkedList<evalti> compararLogin() {
-        String sql = "SELECT correo_electronico,contrasena,nombre,apellido from usuarios WHERE rol_id = 1;";
+        String sql = "SELECT correo_electronico,contrasena,nombre,apellido,activo from usuarios WHERE rol_id = 1;";
         LinkedList<evalti> compararC = new LinkedList<>();
         try {
             
@@ -122,7 +120,7 @@ public class evaltiDAORelacional implements evaltiDAO {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                compararC.add(new evalti(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+                compararC.add(new evalti(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5)));
             }
             return compararC;
         } catch (Exception e) {
@@ -132,28 +130,10 @@ public class evaltiDAORelacional implements evaltiDAO {
         
     }
 
-//    @Override
-//    public LinkedList<evalti> usuex() {
-//        String sql = "SELECT correo_electronico,nombre,apellido from usuarios WHERE id_usuario > 0;";
-//        LinkedList<evalti> comparar = new LinkedList<>();
-//        try {
-//            
-//            con = acceso.Conectar();
-//            ps = con.prepareStatement(sql);
-//            rs = ps.executeQuery();
-//            while (rs.next()) {
-//                comparar.add(new evalti(rs.getString(1),rs.getString(2),rs.getString(3)));
-//            }
-//            return comparar;
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//        return null;
-//    }
 
     @Override
     public LinkedList<evalti> gerente() {
-        String sql = "SELECT correo_electronico,contrasena,nombre,apellido from usuarios WHERE rol_id = 2;";
+        String sql = "SELECT correo_electronico,contrasena,nombre,apellido,activo from usuarios WHERE rol_id = 2;";
         LinkedList<evalti> compararC = new LinkedList<>();
         try {
             
@@ -161,7 +141,7 @@ public class evaltiDAORelacional implements evaltiDAO {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                compararC.add(new evalti(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+                compararC.add(new evalti(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5)));
             }
             return compararC;
         } catch (Exception e) {

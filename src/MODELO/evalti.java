@@ -18,11 +18,12 @@ public class evalti {
     
     
     //login
-    public evalti(String correo_electronico, String contrasena,String nombre,String apellido) {
+    public evalti(String correo_electronico, String contrasena,String nombre,String apellido, boolean activo) {
         this.correo_electronico = correo_electronico;
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.activo = activo;
         
     }
 

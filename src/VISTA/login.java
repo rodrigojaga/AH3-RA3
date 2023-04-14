@@ -229,7 +229,6 @@ public class login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         acceso();
-        //System.out.println(ae);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ojoboton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ojoboton1MousePressed
@@ -247,38 +246,6 @@ public class login extends javax.swing.JFrame {
     private void ojoboton1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ojoboton1KeyTyped
         
     }//GEN-LAST:event_ojoboton1KeyTyped
-
-   
-      
-    
-//    public void accion(){
-//        
-//        //System.out.println(tfUsuario.getText());
-//        //System.out.println(tfcontra.getText());
-//        if (tfUL.getText().equals("admin")&&tfCL.getText().equals("admin")){
-//            JOptionPane.showMessageDialog(null, "Bienvenido Administrador");
-//            usuarioPrincipal ap = new usuarioPrincipal();
-//            ap.setVisible(true);
-//            dispose();
-//        }else{
-//            for(vendedor com : vendedor.vendedores){
-//                if(tfUsuario.getText().equals(com.getNombre())&&tfcontra.getText().equals(com.getContrasena())){
-//                    JOptionPane.showMessageDialog(null, "Bienvenido "+com.getNombre());
-//                    vistaVendedor up = new vistaVendedor();
-//                    String nom = com.getNombre();
-//                    up.mostrarlabel(nom);
-//                    up.setVisible(true);
-//                    
-//                    dispose();
-//                }else{
-//                   JOptionPane.showMessageDialog(null, "CAMPOS INCORRECTOS"); 
-//                }
-//            }
-//            
-//        }
-//        
-//       
-//    }
     
     public void acceso(){
         
@@ -287,44 +254,24 @@ public class login extends javax.swing.JFrame {
             LinkedList<Object> a = new LinkedList<>();
             LinkedList<Object> b = new LinkedList<>();
             LinkedList<String> c = new LinkedList<>();
+            LinkedList<Boolean> d = new LinkedList<>();
             do{
             for (evalti dat : sd.compararLogin()) {
-                Object compa[] = new Object[4];
+                Object compa[] = new Object[5];
                 compa[0] = dat.getCorreo_electronico();
                 compa[1] = dat.getContrasena();
                 compa[2] = dat.getNombre();
                 compa[3] = dat.getApellido();
+                compa[4] = dat.isActivo();
                 a.add(compa[0]);
                 b.add(compa[1]);
                 nombre = "Usuario: "+compa[2]+" "+compa[3];
                 c.add(nombre);
-                
-//                if(compa[0].equals(tfUL.getText())&&compa[1].equals(tfCL.getText())){
-//                    JOptionPane.showMessageDialog(null, "Bienvenido "+nombre);
-//                    usuarios us = new usuarios();
-//                    us.setVisible(true);
-//                    
-//                    dispose();
-//                    us.label(nombre);
-//                    break;
-//                    
-//                }else{
-//                    
-//                
-//                   contador+=1;
-//                    
-//                    JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos");    
-//                    //continue;
-//                    
-//                    
-//                }
-//                
-//                
-                
-            
+                d.add((Boolean) compa[4]);
+                         
             }
             
-            if(a.get(0).equals(tfUL.getText())&&b.get(0).equals(tfCL.getText())){
+            if(a.get(0).equals(tfUL.getText())&&b.get(0).equals(tfCL.getText())&&d.get(0) == true){
                 nombre = c.get(0);
                 JOptionPane.showMessageDialog(null, "Bienvenida "+nombre);
                     usuarios us = new usuarios();
@@ -332,9 +279,9 @@ public class login extends javax.swing.JFrame {
                     
                     dispose();
                     us.label(nombre);
-                    //delete dl = new delete();
-                    //dl.nombreD = nombre;
-            }else if(a.get(1).equals(tfUL.getText())&&b.get(1).equals(tfCL.getText())){
+            }else if(a.get(0).equals(tfUL.getText())&&b.get(0).equals(tfCL.getText())&&d.get(0) == false){
+                JOptionPane.showMessageDialog(null, "Su usuario no esta activo");
+            }else if(a.get(1).equals(tfUL.getText())&&b.get(1).equals(tfCL.getText())&&d.get(1) == true){
                 nombre = c.get(1);
                 JOptionPane.showMessageDialog(null, "Bienvenido "+nombre);
                     usuarios us = new usuarios();
@@ -342,7 +289,9 @@ public class login extends javax.swing.JFrame {
                     
                     dispose();
                     us.label(nombre);
-            }else if(a.get(2).equals(tfUL.getText())&&b.get(2).equals(tfCL.getText())){
+            }else if (a.get(1).equals(tfUL.getText())&&b.get(1).equals(tfCL.getText())&&d.get(1) == false){
+                JOptionPane.showMessageDialog(null, "Su usuario no esta activo, contacte con laura@gmail.com");
+            }else if (a.get(2).equals(tfUL.getText())&&b.get(2).equals(tfCL.getText())&&d.get(2) == true){
                 nombre = c.get(2);
                 JOptionPane.showMessageDialog(null, "Bienvenido "+nombre);
                     usuarios us = new usuarios();
@@ -350,30 +299,32 @@ public class login extends javax.swing.JFrame {
                     
                     dispose();
                     us.label(nombre);
+            }else if (a.get(2).equals(tfUL.getText())&&b.get(2).equals(tfCL.getText())&&d.get(2) == false){
+                JOptionPane.showMessageDialog(null, "Su usuario no esta activo,  contacte con laura@gmail.com");
             }else{
-                LinkedList<Object> z = new LinkedList<>();
+                LinkedList<Boolean> z = new LinkedList<>();
                 LinkedList<String> y = new LinkedList<>();
                 LinkedList<String> x = new LinkedList<>();
            
                 for (evalti dat : sd.gerente()) {
-                    Object compa[] = new Object[4];
+                    Object compa[] = new Object[5];
                     compa[0] = dat.getCorreo_electronico();
                     compa[1] = dat.getContrasena();
                     compa[2] = dat.getNombre();
                     compa[3] = dat.getApellido();
+                    compa[4] = dat.isActivo();
                     x.add(compa[0]+" "+compa[1]);
-//                    z.add(compa[0]);
-//                    y.add(compa[1]);
                     y.add(compa[2]+" "+compa[3]);
-                    //nombre = "Usuario: "+compa[2]+" "+compa[3];
-                    //x.add(nombre); 
+                    z.add((Boolean) compa[4]);
                     
                 }
-//                if(z.contains(tfUL.getText())&&y.contains(tfCL.getText())){
                 String sda = tfUL.getText()+" "+tfCL.getText();
                 if(x.contains(sda)){
                     int di = x.indexOf(sda);
+                    boolean qw =z.get(di);
                     String hd = y.get(di);
+                    if(qw == true){
+                        
                         JOptionPane.showMessageDialog(null, "Bienvenido: "+hd);
                         
                         vistaGerente vg = new vistaGerente();
@@ -381,12 +332,15 @@ public class login extends javax.swing.JFrame {
                         vg.setVisible(true);
                         dispose();
                         break;
+                    }else if(qw == false){
+                        JOptionPane.showMessageDialog(null, "Usuario: "+hd+" INACTIVO");
+                    }
+                    
                     }else{
                         JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos");
                         contador+=1;
                         break;
                     }
-//                contador+=1;
                     
                     
             }

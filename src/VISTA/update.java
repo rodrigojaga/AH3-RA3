@@ -32,8 +32,6 @@ public class update extends javax.swing.JFrame {
         TextPrompt tfdirec = new TextPrompt("Dirección",dir);
         TextPrompt tftele = new TextPrompt("Telefono",tel);
         TextPrompt tfcore = new TextPrompt("Correo Electronico",cor);
-        //TextPrompt tfroll = new TextPrompt("Rol: 1 - Administrador, 2 - Gerente ",tfrol);
-        //TextPrompt tfdact = new TextPrompt("Actividad: True - Activo, False - Inactivo",tfact);
         TextPrompt tfcon = new TextPrompt("Contraseña",con);
         setIconImage(getIconImage());
         actividadUp.add(activo);
@@ -279,10 +277,6 @@ public class update extends javax.swing.JFrame {
                 activo.setForeground(Color.red);
                 inactivo.setForeground(Color.red);
             }
-//            if(tfact.getText().equals("")){
-//                tfact.setBackground(ca);
-//                
-//            }
             if(con.getText().equals("")){
                 con.setBackground(ca);
                 
@@ -292,7 +286,6 @@ public class update extends javax.swing.JFrame {
                 enviar();
         }     
         usuarios us = new usuarios();
-        //us.mantener();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void nomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nomMouseClicked
@@ -328,7 +321,6 @@ public class update extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         usuarios us = new usuarios();
         us.setVisible(true);
-        //us.mantener();
         us.label(a);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
